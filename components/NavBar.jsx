@@ -1,11 +1,10 @@
 import React from "react";
 
 const menuItems = [
-  { name: "Home", href: "#"},
-  { name: "How it works", href: "#" },
-  { name: "Solutions", href: "#" },
-  { name: "Careers", href: "#"},
-  { name: "FAQ", href: "#" },
+  { name: "Home", href: "#" },
+  { name: "About", href: "/about" },
+  { name: "Forum", href: "/forum" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const NavBar = () => (

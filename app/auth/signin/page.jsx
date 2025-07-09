@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
-import { signIn } from '@/auth';
+import { signIn } from 'next-auth/react';
 
 export default function SignIn() {
   const [isLoading, setIsLoading] = useState({
@@ -14,7 +14,7 @@ export default function SignIn() {
   const handleSignIn = async (provider) => {
     try {
       setIsLoading(prev => ({ ...prev, [provider]: true }));
-      await signIn(provider);
+      await signIn(provider, { callbackUrl: '/' });
     } catch (error) {
       console.error(`Error signing in with ${provider}:`, error);
     } finally {
